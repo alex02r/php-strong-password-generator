@@ -45,12 +45,32 @@
     <title>Password Generator</title>
 </head>
 <body>
-    <form action="./index.php" method="GET">
-        Inserisci la lunghezza della password:
-        <input type="number" name="length" id="num" min="1">
-        <button type="submit">Genera</button>
-    </form>
-    <?php echo $psw ?? ''; ?>
+    <header class="bg-dark text-white p-4">
+        <h1>Generate password</h1>
+    </header>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <form action="./index.php" method="GET">
+                    <div class="my-3">
+                        <label class="form-label" for="num">Inserisci la lunghezza della password:</label>
+                        <input class="form-control" type="number" name="length" id="num" min="1" style="width: 4rem">
+                    </div>
+                    <button class="btn btn-dark" type="submit">Genera</button>
+                </form>
+                <?php 
+                    if (isset($psw)) {
+                        ?>
+                        <div class="my-3">
+                            <h6>La tua password: <?php echo $psw; ?></h6>
+                        </div>
+                        <?php
+                    }
+                ?>
+                
+            </div>
+        </div>
+    </div>
     
 </body>
 </html>
