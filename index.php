@@ -6,7 +6,8 @@
     if(isset($_GET['length'])){
         if (is_numeric($_GET['length']) && $_GET['length'] >= 4) {
             if (isset($_GET['number']) || isset($_GET['letters']) || isset($_GET['symbol'])) {
-               // funzione che genera in base a cio che scegliamo
+                $_SESSION['psw'] = generateUniquePassword($_GET['number'], $_GET['letters'], $_GET['symbol'], $_GET['length']);
+                header('Location: ./password.php');
             }else{
                 $_SESSION['psw'] = generatePassword((int)$_GET['length']);
                 header('Location: ./password.php');

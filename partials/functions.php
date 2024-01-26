@@ -37,19 +37,25 @@
     //funzione che genera la password in base ai parametri che vengono selezionati;
     function generateUniquePassword($num, $char, $sym, $leng){
         $list = [];
-        if (isset($num)) {
+        $password = '';
+        if ($num == 'on') {
             $number = '1234567890';
-            array_push($list, $number);
+            $list[]= $number;
         }
-        if (isset($char)) {
+        if ($char == 'on') {
             $string1 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
             $string1 .= strtolower($string1);
-            array_push($list, $string1);
+            $list[]= $string1;
         }
-        if (isset($sym)) {
+        if ($sym == 'on') {
             $simbol = '!@-_?}{>]<[';
-            array_push($list, $simbol);
+                $list[]= $simbol;;
         }
-        
+        for ($i=0; $i < $leng; $i++) { 
+            $j = rand(0,count($list) - 1);
+            $numero = rand(0, strlen($list[$j]) - 1);
+            $password .= $list[$j][$numero];
+        }
+        return $password;
     }
 ?>
