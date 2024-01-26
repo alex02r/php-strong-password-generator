@@ -2,7 +2,9 @@
 //funzione che genera password casuale
     function generatePassword($leng){
         for ($i=0; $i < $leng; $i++) { 
-            
+            $string1 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $number = '1234567890';
+            $simbol = '!@-_?{}[]<>';
         }
     }
 //controllo se il valore è stato inserito, se sia un numero e sia maggiore di 1 
