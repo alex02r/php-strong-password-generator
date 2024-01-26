@@ -1,7 +1,13 @@
 <?php
+//funzione che genera password casuale
+    function generatePassword($leng){
+        for ($i=0; $i < $leng; $i++) { 
+            
+        }
+    }
 //controllo se il valore è stato inserito, se sia un numero e sia maggiore di 1 
     if(isset($_GET['length']) && is_numeric($_GET['length']) && $_GET['length'] > 1){
-
+        
     }
 
 ?>
