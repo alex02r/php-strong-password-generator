@@ -9,21 +9,21 @@
             $num = rand(1,4);
             switch ($num) {
                 case 1:
-                    $password .= $string1[rand(0, strlen($string1))];
+                    $password .= $string1[rand(0, strlen($string1) - 1 )];
                     break;
                 case 2:
-                    $password .= $number[rand(0, strlen($number))];
+                    $password .= $number[rand(0, strlen($number) - 1)];
                     break;
                 case 3:
-                    $password .= strtolower($string1[rand(0, strlen($string1))]);
+                    $password .= strtolower($string1[rand(0, strlen($string1) - 1)]);
                     break;
                 
                 case 4:
-                    $password .= $simbol[rand(0, strlen($simbol))];
+                    $password .= $simbol[rand(0, strlen($simbol) - 1)];
                     break;
                     
                 default:
-                    $password .= strtolower($string1[rand(1, strlen($string1))]);
+                    $password .= strtolower($string1[rand(1, strlen($string1) - 1)]);
                     break;
             }
         }
