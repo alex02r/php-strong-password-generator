@@ -36,6 +36,21 @@
                         <input class="form-control" type="number" name="length" id="num" min="4" style="width: 4rem">
                         <?php  echo $result ?? ''; ?>
                     </div>
+                    <div class="">
+                        Scegli il formato della password:
+                        <div class="form-cehck">
+                            <input class="form-ceck-input" type="checkbox" name="number" id="check1">
+                            <label class="form-ceck-label" for="check1">Numeri</label>
+                        </div>
+                        <div class="form-cehck">
+                            <input class="form-ceck-input" type="checkbox" name="letters" id="check2">
+                            <label class="form-ceck-label" for="check1">Lettere</label>
+                        </div>
+                        <div class="form-cehck">
+                            <input class="form-ceck-input" type="checkbox" name="symbol" id="check3">
+                            <label class="form-ceck-label" for="check1">Simboli</label>
+                        </div>
+                    </div>
                     <button class="btn btn-dark" type="submit">Genera</button>
                 </form>
             </div>
