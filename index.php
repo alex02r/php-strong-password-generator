@@ -3,23 +3,23 @@
     function generatePassword($leng){
         $string1 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $number = '1234567890';
-        $simbol = '!@-_?{}[]<>';
+        $simbol = '!@-_?}{>]<[';
         $password = '';
         for ($i=0; $i < $leng; $i++) { 
             $num = rand(1,4);
             switch ($num) {
                 case 1:
-                    $password .= $string1[rand(1, strlen($string1))];
+                    $password .= $string1[rand(0, strlen($string1))];
                     break;
                 case 2:
-                    $password .= $number[rand(1, strlen($number))];
+                    $password .= $number[rand(0, strlen($number))];
                     break;
                 case 3:
-                    $password .= strtolower($string1[rand(1, strlen($string1))]);
+                    $password .= strtolower($string1[rand(0, strlen($string1))]);
                     break;
                 
                 case 4:
-                    $password .= $simbol[rand(1, strlen($string1))];
+                    $password .= $simbol[rand(0, strlen($simbol))];
                     break;
                     
                 default:
