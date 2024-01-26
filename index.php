@@ -5,8 +5,12 @@
     //controllo se il valore è stato inserito, se sia un numero e sia maggiore di 1 
     if(isset($_GET['length'])){
         if (is_numeric($_GET['length']) && $_GET['length'] >= 4) {
-            $_SESSION['psw'] = generatePassword((int)$_GET['length']);
-            header('Location: ./password.php');
+            if (isset($_GET['number']) || isset($_GET['letters']) || isset($_GET['symbol'])) {
+               // funzione che genera in base a cio che scegliamo
+            }else{
+                $_SESSION['psw'] = generatePassword((int)$_GET['length']);
+                header('Location: ./password.php');
+            }
         }else{
             $result = 'Il valore vede essere superiore a 4';
         }
