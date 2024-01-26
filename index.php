@@ -23,11 +23,11 @@
                     break;
             }
         }
-        return $password 
+        return $password ;
     }
 //controllo se il valore è stato inserito, se sia un numero e sia maggiore di 1 
     if(isset($_GET['length']) && is_numeric($_GET['length']) && $_GET['length'] > 1){
-        
+        $psw = generatePassword((int)$_GET['length']);
     }
 
 ?>
@@ -46,5 +46,7 @@
         <input type="number" name="length" id="num" min="1">
         <button type="submit">Genera</button>
     </form>
+    <?php echo $psw ?? ''; ?>
+    
 </body>
 </html>
