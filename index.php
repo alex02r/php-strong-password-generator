@@ -6,7 +6,7 @@
     if(isset($_GET['length'])){
         if (is_numeric($_GET['length']) && $_GET['length'] >= 4) {
             $_SESSION['psw'] = generatePassword((int)$_GET['length']);
-        header('Location: ./password.php');
+            header('Location: ./password.php');
         }else{
             $result = 'Il valore vede essere superiore a 4';
         }

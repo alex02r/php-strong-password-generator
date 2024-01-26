@@ -16,11 +16,11 @@
             <div class="row justify-content-center">
                 <div class="col-6">
                 <?php 
-                session_start();
+                    session_start();
                     if (isset($_SESSION['psw'])) {
                         ?>
                         <div class="my-3">
-                            <h6>La tua password: <?php $_SESSION['psw']; ?></h6>
+                            <h6>La tua password: <?php echo $_SESSION['psw']; ?></h6>
                         </div>
                         <?php
                     }else{
