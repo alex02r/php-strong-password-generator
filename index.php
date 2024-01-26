@@ -8,6 +8,8 @@
     <title>Password Generator</title>
 </head>
 <body>
-    
+    <form action="./index.php" method="GET">
+        
+    </form>
 </body>
 </html>
