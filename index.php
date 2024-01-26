@@ -6,7 +6,7 @@
         $simbol = '!@-_?{}[]<>';
         $password = '';
         for ($i=0; $i < $leng; $i++) { 
-            $num = rand(1,3);
+            $num = rand(1,4);
             switch ($num) {
                 case 1:
                     $password .= $string1[rand(1, strlen($string1))];
@@ -18,6 +18,10 @@
                     $password .= strtolower($string1[rand(1, strlen($string1))]);
                     break;
                 
+                case 4:
+                    $password .= $simbol[rand(1, strlen($string1))];
+                    break;
+                    
                 default:
                     $password .= strtolower($string1[rand(1, strlen($string1))]);
                     break;
