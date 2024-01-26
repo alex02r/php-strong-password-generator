@@ -30,7 +30,7 @@
         return $password ;
     }
 //controllo se il valore è stato inserito, se sia un numero e sia maggiore di 1 
-    if(isset($_GET['length']) && is_numeric($_GET['length']) && $_GET['length'] > 1){
+    if(isset($_GET['length']) && is_numeric($_GET['length']) && $_GET['length'] > 3){
         $psw = generatePassword((int)$_GET['length']);
     }
 
@@ -54,7 +54,7 @@
                 <form action="./index.php" method="GET">
                     <div class="my-3">
                         <label class="form-label" for="num">Inserisci la lunghezza della password:</label>
-                        <input class="form-control" type="number" name="length" id="num" min="1" style="width: 4rem">
+                        <input class="form-control" type="number" name="length" id="num" min="3" style="width: 4rem">
                     </div>
                     <button class="btn btn-dark" type="submit">Genera</button>
                 </form>
