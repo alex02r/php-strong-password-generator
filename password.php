@@ -20,12 +20,15 @@
                     if (isset($_SESSION['psw'])) {
                         ?>
                         <div class="my-3">
-                            <h6>La tua password: <?php echo $_SESSION['psw']; ?></h6>
+                            <h5>La tua password: <?php echo $_SESSION['psw']; ?></h5>
                         </div>
+                        <div class="btn btn-dark"> <a href="./index.php">Torna alla home</a></div>
                         <?php
                     }else{
                         header('Location: ./index.php');
                     }
+                    // cancellare la password una volta visualizzata
+                    session_unset();
                 ?>
                 </div>  
             </div>
