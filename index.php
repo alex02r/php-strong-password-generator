@@ -9,7 +9,9 @@
 </head>
 <body>
     <form action="./index.php" method="GET">
-        
+        Inserisci la lunghezza della password:
+        <input type="number" name="length" id="num" min="1">
+        <button type="submit">Genera</button>
     </form>
 </body>
 </html>
