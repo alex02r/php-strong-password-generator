@@ -1,11 +1,29 @@
 <?php
 //funzione che genera password casuale
     function generatePassword($leng){
+        $string1 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $number = '1234567890';
+        $simbol = '!@-_?{}[]<>';
+        $password = '';
         for ($i=0; $i < $leng; $i++) { 
-            $string1 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-            $number = '1234567890';
-            $simbol = '!@-_?{}[]<>';
+            $num = rand(1,3);
+            switch ($num) {
+                case 1:
+                    $password .= $string1[rand(1, strlen($string1))];
+                    break;
+                case 2:
+                    $password .= $number[rand(1, strlen($number))];
+                    break;
+                case 3:
+                    $password .= strtolower($string1[rand(1, strlen($string1))]);
+                    break;
+                
+                default:
+                    $password .= strtolower($string1[rand(1, strlen($string1))]);
+                    break;
+            }
         }
+        return $password 
     }
 //controllo se il valore è stato inserito, se sia un numero e sia maggiore di 1 
     if(isset($_GET['length']) && is_numeric($_GET['length']) && $_GET['length'] > 1){
