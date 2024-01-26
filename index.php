@@ -32,6 +32,8 @@
 //controllo se il valore è stato inserito, se sia un numero e sia maggiore di 1 
     if(isset($_GET['length']) && is_numeric($_GET['length']) && $_GET['length'] > 3){
         $psw = generatePassword((int)$_GET['length']);
+    }else{
+        $result = 'Il valore vede essere superiore a 3';
     }
 
 ?>
@@ -59,6 +61,7 @@
                     <button class="btn btn-dark" type="submit">Genera</button>
                 </form>
                 <?php 
+                    echo $result ?? '';
                     if (isset($psw)) {
                         ?>
                         <div class="my-3">
