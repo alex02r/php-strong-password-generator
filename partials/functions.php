@@ -33,4 +33,23 @@
         }
         return str_shuffle($password) ;
     }
+
+    //funzione che genera la password in base ai parametri che vengono selezionati;
+    function generateUniquePassword($num, $char, $sym, $leng){
+        $list = [];
+        if (isset($num)) {
+            $number = '1234567890';
+            array_push($list, $number);
+        }
+        if (isset($char)) {
+            $string1 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $string1 .= strtolower($string1);
+            array_push($list, $string1);
+        }
+        if (isset($sym)) {
+            $simbol = '!@-_?}{>]<[';
+            array_push($list, $simbol);
+        }
+        
+    }
 ?>
