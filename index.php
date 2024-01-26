@@ -1,11 +1,17 @@
 <?php
     include __DIR__.'/partials/functions.php';
-//controllo se il valore è stato inserito, se sia un numero e sia maggiore di 1 
-    if(isset($_GET['length']) && is_numeric($_GET['length']) && $_GET['length'] >= 4){
-        $psw = generatePassword((int)$_GET['length']);
-    }else{
-        $result = 'Il valore vede essere superiore a 4';
+
+    session_start();
+    //controllo se il valore è stato inserito, se sia un numero e sia maggiore di 1 
+    if(isset($_GET['length'])){
+        if (is_numeric($_GET['length']) && $_GET['length'] >= 4) {
+            $_SESSION['psw'] = generatePassword((int)$_GET['length']);
+        header('Location: ./password.php');
+        }else{
+            $result = 'Il valore vede essere superiore a 4';
+        }
     }
+       
 
 ?>
 <!DOCTYPE html>
@@ -27,21 +33,11 @@
                 <form action="./index.php" method="GET">
                     <div class="my-3">
                         <label class="form-label" for="num">Inserisci la lunghezza della password:</label>
-                        <input class="form-control" type="number" name="length" id="num" min="3" style="width: 4rem">
+                        <input class="form-control" type="number" name="length" id="num" min="4" style="width: 4rem">
+                        <?php  echo $result ?? ''; ?>
                     </div>
                     <button class="btn btn-dark" type="submit">Genera</button>
                 </form>
-                <?php 
-                    echo $result ?? '';
-                    if (isset($psw)) {
-                        ?>
-                        <div class="my-3">
-                            <h6>La tua password: <?php echo $psw; ?></h6>
-                        </div>
-                        <?php
-                    }
-                ?>
-                
             </div>
         </div>
     </div>
